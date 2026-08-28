@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #FAFAF6;
+  --color-paper-soft: #F2F4EE;
+  --color-ink: #14231C;
+  --color-ink-soft: #43524A;
+  --color-brand: #1B6B4A;
+  --color-brand-dark: #123F2C;
+  --color-brand-light: #2F8A63;
+  --color-gold: #E8A33D;
+  --color-gold-dark: #C77F1F;
+  --color-sage: #EFF3EC;
+  --color-line: #DCE2D6;
+  --color-danger: #B3432E;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --radius-card: 14px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+
+.ledger-row { position: relative; border-bottom: 1px solid var(--color-line); }
+.ledger-row:last-child { border-bottom: none; }
+.ledger-tab { font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-ink-soft); }
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection { background: var(--color-gold); color: var(--color-ink); }
